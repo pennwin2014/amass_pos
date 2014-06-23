@@ -14,7 +14,6 @@
 ..\obj\main.o: ..\src\board.h
 ..\obj\main.o: ..\src\Hd7279a.h
 ..\obj\main.o: ..\src\psam.h
-..\obj\main.o: ..\src\para.h
 ..\obj\main.o: ..\src\can.h
 ..\obj\main.o: ..\src\sp_info.h
 ..\obj\main.o: ..\src\menu.h

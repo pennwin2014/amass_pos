@@ -1,6 +1,6 @@
 ..\obj\flash_store.o: ..\src\flash_store.c
 ..\obj\flash_store.o: ..\src\flash_store.h
-..\obj\flash_store.o: ..\src\para.h
+..\obj\flash_store.o: ..\src\sp_info.h
 ..\obj\flash_store.o: ..\src\config.h
 ..\obj\flash_store.o: ..\src\LPC2294.h
 ..\obj\flash_store.o: D:\Penn\09Keil\ARM\RV31\INC\stdio.h

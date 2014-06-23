@@ -1,6 +1,6 @@
 #ifndef __FLASH_STORE_H__
 #define __FLASH_STORE_H__
-#include "para.h"
+#include "sp_info.h"
 
 //SF_Write
 //最后一个参数

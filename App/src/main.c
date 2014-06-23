@@ -1,6 +1,5 @@
 #include "config.h"
 #include "Mifare.h"
-#include "para.h"
 #include "can.h"
 #include "sp_info.h"
 #include "menu.h"
@@ -86,7 +85,7 @@ int main()
 {
 	uint8 cSendBuf[7] = {0x00, 0xA4, 0x00, 0x00, 0x00, 0x3F, 0x00};
 	uint8 cRcvBuf[64], cRcvLen;
-	uint8 press_key_num = 0, key_cnt = 0, old_key_cnt = 1;
+	uint8 press_key_num = 0;
 
 	InitBoard();
 	Beep(3);
@@ -114,28 +113,19 @@ int main()
 	#endif
 
 	
-	//用户的初始化
-	init_sp_info(&sp_main_ctx);
+	//初始化全局结构体
+	sp_init_info(&sp_main_ctx);
 	while(1)
 	{
 		press_key_num = GetSCKEY();
-		if(press_key_num == SP_KEY_ADD)
-			key_cnt++;
-		else if(press_key_num == SP_KEY_MINUS)
-			key_cnt--;
+		sp_do_sckey(press_key_num, &sp_main_ctx);
+
 		if(ResetCard_A())
 		{
 			nCode = CpuCard_Apdu(0x0f, 7, cSendBuf, &cRcvLen, cRcvBuf);
 			Beep(3);
 			Deselect_A();
 			Reset_Reader_TimeOut();
-		}
-		//500ms或1S刷新一次 从Flash读取点阵需要时间可放定时器回调函数处理
-		//sp_disp_press_key(press_key_num, key_cnt);
-		if(key_cnt!=old_key_cnt)
-		{
-			sp_disp_menu(key_cnt, &sp_main_ctx);
-			old_key_cnt = key_cnt;
 		}
 			
 		//喂狗定义防止溢出程序复位		
