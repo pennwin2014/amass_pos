@@ -2,6 +2,7 @@
 #include "Mifare.h"
 #include "para.h"
 #include "can.h"
+#include "sp_info.h"
 #include "menu.h"
 
 #define HD_POS HD_SC
@@ -11,8 +12,8 @@
 uint16 nCode = 0;
 uint8 gcComBuf[1024];
 SYSTIME gSysTime;
+sp_context sp_main_ctx;
 
-//void sp_show_menu(sp_context* pos);
 
 
 __inline void DelayNS2(int dly)
@@ -33,45 +34,7 @@ void ByteToDecStr(unsigned char cValue, unsigned char *pChar)
 		cValue /= 10;
 	}
 	pChar[3] = '\0';
-}
-
-
-void DispTime(void)
-{
-#if (HD_POS == HD_SC)
-	uint8  cTime[20];
-    GetTime(&gSysTime);	
-	ByteToDecStr(gSysTime.chMonth, cTime);
-	ByteToDecStr(gSysTime.chDay, &cTime[3]);
-	cTime[3] = '-';
-	ByteToDecStr(gSysTime.chHour, &cTime[6]);
-	ByteToDecStr(gSysTime.chMinute, &cTime[9]);
-	ByteToDecStr(gSysTime.chSecond, &cTime[12]);
-	cTime[0] = cTime[6] = cTime[15] = ' ';
-	cTime[9] = cTime[12] = ':';
-	cTime[16] = 0;
-//	memset(cTime,0,16);
-//	sprintf(cTime,"supwisdom",9);
-	LcdPrint(3, 0,(char *) cTime, 0);
-
-#elif (HD_POS == HD_S2)
-	unsigned char  cTime[16];
-	GetTime(&gSysTime);	
-	cTime[0] = gSysTime.chHour / 10;			//Hour
-	cTime[1] = gSysTime.chHour % 10 ;	
-	cTime[3] = gSysTime.chMinute / 10; 			//Minute
-	cTime[4] = gSysTime.chMinute % 10;
-	cTime[6] = gSysTime.chSecond / 10; 		//Second
-	cTime[7] = gSysTime.chSecond % 10;
-/*
-	cTime[8] = (gSysTime.chYear % 100) /10;	//Year
-	cTime[9] = (gSysTime.chYear % 100) %10;	
-	cTime[11] = gSysTime.chMonth/ 10; 			//Month
-	cTime[12] = gSysTime.chMonth % 10;
-	cTime[14] = gSysTime.chDay / 10; 			//Day
-	cTime[15] = gSysTime.chDay % 10;*/
-#endif	
-}		
+}	
 		
 		
 		
@@ -123,47 +86,10 @@ int main()
 {
 	uint8 cSendBuf[7] = {0x00, 0xA4, 0x00, 0x00, 0x00, 0x3F, 0x00};
 	uint8 cRcvBuf[64], cRcvLen;
-	uint8 ret1,ret2,ret3;
-	int32 cnt = 0;
-	uint8 writebuf[64];
-	uint8 comm_data[128] = {0};
+	uint8 press_key_num = 0, key_cnt = 0, old_key_cnt = 1;
 
-	memset(writebuf, 0, 64);
-
-	
 	InitBoard();
 	Beep(3);
-
-	sprintf((char*)writebuf, "i like pizzar");
-	
-	ret3 = IsFlashBusy();
-	if(ret3 == 1)
-	{
-		//sprintf(cDispMsg,"flash is busy");	
-	}
-	else
-	{
-		//SF_ErasePage(1);
-		ret0 = SF_Write(1, 0, writebuf, 64, 1);
-		//ret2 = SF_Read(1, 0, cRcvBuf, 64);
-		//sprintf(cDispMsg, "%d,%d,%s", ret1, ret2, cRcvBuf);
-		
-		ret1 = SF_Read(0, 0, cRcvBuf, 64);
-		ret2 = SF_Read(1, 0, writebuf, 64);
-		//sprintf(cDispMsg, "%d,%d,%s,%s", ret0, ret2, cRcvBuf, writebuf);
-	}
-
-	
-
-	#ifdef TEST_FLASH
-	//Flash读写操作
-	SF_ErasePage(0);
-	SF_Read(0,0, cFlashBuf, 254);
-	memset(cFlashBuf, 0xAA, 254);
-	SF_Write(0,0,cFlashBuf,254, 1);
-	memset(cFlashBuf, 0x00, 254);
-	SF_Read(0,0, cFlashBuf, 254);
-	#endif
 
 	//看门狗初始化
 	#ifdef OPEN_WDT
@@ -188,9 +114,15 @@ int main()
 	#endif
 
 	
+	//用户的初始化
+	init_sp_info(&sp_main_ctx);
 	while(1)
 	{
-		GetSCKEY();
+		press_key_num = GetSCKEY();
+		if(press_key_num == SP_KEY_ADD)
+			key_cnt++;
+		else if(press_key_num == SP_KEY_MINUS)
+			key_cnt--;
 		if(ResetCard_A())
 		{
 			nCode = CpuCard_Apdu(0x0f, 7, cSendBuf, &cRcvLen, cRcvBuf);
@@ -199,16 +131,13 @@ int main()
 			Reset_Reader_TimeOut();
 		}
 		//500ms或1S刷新一次 从Flash读取点阵需要时间可放定时器回调函数处理
-	//	DispTime();
-		sw_disp_menu();
-		get_test_comm_data(comm_data);
-		//ret0 = COM_SendBuf(COM0,  comm_data,  8);
-		ret1 = COM_SendBuf(COM1, comm_data, 14);
-
-		//DelayNS(100);
-		//sprintf(cDispMsg, "r0=%d,r1=%d,%d,%s", ret0, ret1, cnt++, writebuf);
-		if(cnt >= 2000)
-			cnt = 0;
+		//sp_disp_press_key(press_key_num, key_cnt);
+		if(key_cnt!=old_key_cnt)
+		{
+			sp_disp_menu(key_cnt, &sp_main_ctx);
+			old_key_cnt = key_cnt;
+		}
+			
 		//喂狗定义防止溢出程序复位		
 		KillWatchDog();
 	}	

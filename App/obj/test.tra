@@ -4,15 +4,17 @@
 ### List of Objects: adding '"..\obj\main.o"'
 ### List of Objects: adding '"..\..\HD6P_Lib.lib"'
 ### List of Objects: adding '"..\obj\flash_store.o"'
+### List of Objects: adding '"..\obj\menu.o"'
+### List of Objects: adding '"..\obj\sp_info.o"'
 ### ADS-LD Command completed:
---cpu ARM7TDMI "..\obj\main.o" "..\..\HD6P_Lib.lib" "..\obj\flash_store.o" --strict --scatter "..\src\mem_c.scf" 
+--cpu ARM7TDMI "..\obj\main.o" "..\..\HD6P_Lib.lib" "..\obj\flash_store.o" "..\obj\menu.o" "..\obj\sp_info.o" --strict --scatter "..\src\mem_c.scf" 
 --entry 0x00000000 --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list "..\test.map" -o "..\obj\test.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: '..\obj\test.axf'
 ### ADS-LD Command File: '..\obj\test.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '..\obj\test.lnp', Handle=0x00000324
+### Creating CmdFile '..\obj\test.lnp', Handle=0x00000DBC
 ### Writing '.lnp' file
 ### ADS-LD Command file '..\obj\test.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

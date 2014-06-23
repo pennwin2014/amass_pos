@@ -1,4 +1,4 @@
---cpu ARM7TDMI "..\obj\main.o" "..\..\HD6P_Lib.lib" "..\obj\flash_store.o" --strict --scatter "..\src\mem_c.scf" 
+--cpu ARM7TDMI "..\obj\main.o" "..\..\HD6P_Lib.lib" "..\obj\flash_store.o" "..\obj\menu.o" "..\obj\sp_info.o" --strict --scatter "..\src\mem_c.scf" 
 --entry 0x00000000 --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list "..\test.map" -o "..\obj\test.axf"

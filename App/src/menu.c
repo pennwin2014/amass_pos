@@ -1,22 +1,31 @@
 #include "menu.h"
 
-void sw_disp_menu()
+
+void sp_disp_test(uint8 key_num, uint8 key_cnt)
 {
-	char cDispMsg[256];
-	//第一个菜单
-	memset(cDispMsg, 0, 256);
-	sprintf(cDispMsg,"设置");
-	LcdPrint(0, 0, cDispMsg, 0);
-	//第二个菜单	
-	memset(cDispMsg, 0, 256);
-	sprintf(cDispMsg,"消费");
-	LcdPrint(1, 0, cDispMsg, 0);
-	//第三个菜单
-	memset(cDispMsg, 0, 256);
-	sprintf(cDispMsg,"签到/签退");
-	LcdPrint(2, 0, cDispMsg, 0);
-	//第四个菜单
-	memset(cDispMsg, 0, 256);
-	sprintf(cDispMsg,"关机");
-	LcdPrint(3, 0, cDispMsg, 0); 
+	char dispmsg[100];
+	memset(dispmsg, 0, 100);
+	sprintf(dispmsg, "key=%02x", key_num);
+	LcdPrint(0, 10, dispmsg, 0);
+	memset(dispmsg, 0, 100);
+	sprintf(dispmsg, "cnt=%d", key_cnt);
+	LcdPrint(1, 10, dispmsg, 0);
+}
+
+void sp_disp_press_key(uint8 key_num, uint8 key_cnt)
+{
+	char dispmsg[100];
+	memset(dispmsg, 0, 100);
+	sprintf(dispmsg, "hex=%x,dec=%d", key_num,key_cnt);
+	LcdPrint(1, 0, dispmsg, 0);
+}
+
+void sp_disp_menu(uint8 start_index, sp_context* p_ctx)
+{
+	int i = 0;
+	LcdCLS(0xFF);
+	for(i=0; i<MAX_MENU_LIST_CNT; i++)
+	{		
+		LcdPrint(i, 0, p_ctx->menu_info[(start_index+i)%MENU_CNT], 0);
+	}
 }
