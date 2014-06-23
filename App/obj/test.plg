@@ -1,0 +1,88 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\Penn\02works\00ecard\03hw\amass_pos\App\keil\HD6P_Drive_App.uvproj
+Project File Date:  05/30/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+compiling flash_store.c...
+linking...
+Program Size: Code=33784 RO-data=32 RW-data=136 ZI-data=5648  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling flash_store.c...
+linking...
+Program Size: Code=33784 RO-data=32 RW-data=136 ZI-data=5648  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling flash_store.c...
+linking...
+Program Size: Code=33844 RO-data=32 RW-data=136 ZI-data=5648  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\src\menu.h(5): warning:  #1295-D: Deprecated declaration sw_disp_menu - give arg types
+..\src\menu.h:   void sw_disp_menu();
+..\src\menu.h:        ^
+..\src\menu.h(8): warning:  #1-D: last line of file ends without a newline
+..\src\menu.h:   #endif
+..\src\menu.h:         ^
+..\src\main.c(126): warning:  #550-D: variable "ret0" was set but never used
+..\src\main.c:          uint8 ret0,ret1,ret2,ret3;
+..\src\main.c:                ^
+..\src\main.c(126): warning:  #550-D: variable "ret1" was set but never used
+..\src\main.c:          uint8 ret0,ret1,ret2,ret3;
+..\src\main.c:                     ^
+..\src\main.c(126): warning:  #550-D: variable "ret2" was set but never used
+..\src\main.c:          uint8 ret0,ret1,ret2,ret3;
+..\src\main.c:                          ^
+..\src\main.c: ..\src\main.c: 5 warnings, 0 errors
+compiling flash_store.c...
+compiling menu.c...
+..\src\lcd.h(51): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern void SetLcdType(uint8 cLCDType);
+..\src\lcd.h:                          ^
+..\src\lcd.h(62): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern uint8 GetLcdType(void);
+..\src\lcd.h:          ^
+..\src\lcd.h(73): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern void SetLcdContrast(uint8 cContrast);
+..\src\lcd.h:                              ^
+..\src\lcd.h(85): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern void LcdCLS(uint8 cRow);                                 //LCD 清屏
+..\src\lcd.h:                      ^
+..\src\lcd.h(107): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern void LcdPrint(uint8 cRow, uint8 cArray, char *String,uint8 cFlashnum);//LCD输出显示      
+..\src\lcd.h:                        ^
+..\src\lcd.h(107): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern void LcdPrint(uint8 cRow, uint8 cArray, char *String,uint8 cFlashnum);//LCD输出显示      
+..\src\lcd.h:                                    ^
+..\src\lcd.h(107): error:  #20: identifier "uint8" is undefined
+..\src\lcd.h:   extern void LcdPrint(uint8 cRow, uint8 cArray, char *String,uint8 cFlashnum);//LCD输出显示      
+..\src\lcd.h:                                                               ^
+..\src\menu.h(5): warning:  #1295-D: Deprecated declaration sw_disp_menu - give arg types
+..\src\menu.h:   void sw_disp_menu();
+..\src\menu.h:        ^
+..\src\menu.h(8): warning:  #1-D: last line of file ends without a newline
+..\src\menu.h:   #endif
+..\src\menu.h:         ^
+..\src\menu.c(7): warning:  #223-D: function "memset" declared implicitly
+..\src\menu.c:          memset(cDispMsg, 0, 256);
+..\src\menu.c:          ^
+..\src\menu.c(8): warning:  #223-D: function "sprintf" declared implicitly
+..\src\menu.c:          sprintf(cDispMsg,"设置");
+..\src\menu.c:          ^
+..\src\menu.c(22): warning:  #1-D: last line of file ends without a newline
+..\src\menu.c:   }
+..\src\menu.c:    ^
+..\src\menu.c: ..\src\menu.c: 5 warnings, 7 errors
+Target not created

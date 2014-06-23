@@ -1,0 +1,1 @@
+-c --cpu ARM7TDMI -g -O0 --apcs=interwork -I "D:\Penn\09Keil\ARM\INC" -I "D:\Penn\09Keil\ARM\INC\Philips" -D__DEBUG_FLASH -o "..\obj\flash_store.o" --omf_browse "..\obj\flash_store.crf" --depend "..\obj\flash_store.d" "..\src\flash_store.c"
