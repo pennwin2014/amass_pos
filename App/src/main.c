@@ -115,6 +115,7 @@ int main()
 	
 	//初始化全局结构体
 	sp_init_info(&sp_main_ctx);
+	load_sys_info(&sp_main_ctx);
 	while(1)
 	{
 		press_key_num = GetSCKEY();

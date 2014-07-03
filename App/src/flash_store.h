@@ -2,34 +2,18 @@
 #define __FLASH_STORE_H__
 #include "sp_info.h"
 
-//SF_Write
-//最后一个参数
-//1-----先擦除原来的数据再写，肯定可以写上
-//0-----直接写，有可能有的地方写不上
-//返回值:1表示成功
-uint8 sp_set_transno_unit(bool flag, char* punit, uint16 lastaddr);
+
+uint32 sp_get_next_transdtl_addr(uint32 transdtl_addr);
+uint8 sp_do_write_card(uint8* ptransdtl);
+uint8 sp_update_left_transdtl_info(uint8* ptransdtl);
 
 
 
-/*******************************************************
-*** 函数名:		sp_get_transno_unit
-*** 函数功能:	读取主从流水号	
-*** 参数flag: 	flag = true 主流水号;flag=false 从流水号
-*** 参数punit: 	最小单元的结构体指针
-*** 作者:		汪鹏
-*** 时间:		2014-05-30
-*********************************************************/
-uint8 sp_get_transno_unit(bool flag, sp_transno_unit* punit);
+uint8 sp_write_transno_unit(bool flag, uint8* punit);
+uint8 sp_read_transno_unit(bool flag, uint8* punit);
 
 
 
-/*******************************************************
-*** 函数名:		sp_write_transdtl
-*** 函数功能:		写交易流水到flash
-*** 参数: 	交易流水结构体指针
-*** 作者:		汪鹏
-*** 时间:		2014-05-28
-*********************************************************/
 uint8 sp_write_transdtl(uint8* ptransdtl);
 
 
@@ -40,9 +24,9 @@ uint8 sp_write_transdtl(uint8* ptransdtl);
 *** 函数功能:		写交易流水到flash
 *** 参数: 	交易流水结构体指针
 *** 作者:		汪鹏
-*** 时间:		2014-05-28
+*** 时间:		2014-07-03
 *********************************************************/
-uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
+uint8 sp_read_transdtl(uint8* ptransdtl);
 
 
 /*******************************************************
@@ -50,9 +34,9 @@ uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
 *** 函数功能:		写系统参数到flash
 *** 参数: 	需要写的该页的全部内容,该页的起始地址
 *** 作者:		汪鹏
-*** 时间:		2014-05-29
+*** 时间:		2014-07-03
 *********************************************************/
-uint8 sp_write_sysinfo(char* write_buff, char* start_addr);
+uint8 sp_write_sysinfo(uint8* p_ctx);
 
 
 
@@ -61,9 +45,9 @@ uint8 sp_write_sysinfo(char* write_buff, char* start_addr);
 *** 函数功能:		写系统参数到flash
 *** 参数: 	需要写的该页的全部内容,该页的起始地址
 *** 作者:		汪鹏
-*** 时间:		2014-05-29
+*** 时间:		2014-07-03
 *********************************************************/
-uint8 sp_read_sysinfo(char* factor_name , uPageType pageno);
+uint8 sp_read_sysinfo(uint8* p_ctx);
 
 
 

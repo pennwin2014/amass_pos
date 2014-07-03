@@ -1,136 +1,15 @@
 #include "flash_store.h"
-#include "M25PE16.h"
 
-static uint16 crc_table[] =
+/**************************************************************
+******SF_Write
+//最后一个参数
+//1-----先擦除原来的数据再写，肯定可以写上
+//0-----直接写，有可能有的地方写不上
+//返回值:1表示成功
+****************************************************************/
+uint32 sp_get_next_transdtl_addr(uint32 transdtl_addr)
 {
-	0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50A5, 0x60C6, 0x70E7,
-	0x8108, 0x9129, 0xA14A, 0xB16B, 0xC18C, 0xD1AD, 0xE1CE, 0xF1EF,
-	0x1231, 0x0210, 0x3273, 0x2252, 0x52B5, 0x4294, 0x72F7, 0x62D6,
-	0x9339, 0x8318, 0xB37B, 0xA35A, 0xD3BD, 0xC39C, 0xF3FF, 0xE3DE,
-	0x2462, 0x3443, 0x0420, 0x1401, 0x64E6, 0x74C7, 0x44A4, 0x5485,
-	0xA56A, 0xB54B, 0x8528, 0x9509, 0xE5EE, 0xF5CF, 0xC5AC, 0xD58D,
-	0x3653, 0x2672, 0x1611, 0x0630, 0x76D7, 0x66F6, 0x5695, 0x46B4,
-	0xB75B, 0xA77A, 0x9719, 0x8738, 0xF7DF, 0xE7FE, 0xD79D, 0xC7BC,
-	0x48C4, 0x58E5, 0x6886, 0x78A7, 0x0840, 0x1861, 0x2802, 0x3823,
-	0xC9CC, 0xD9ED, 0xE98E, 0xF9AF, 0x8948, 0x9969, 0xA90A, 0xB92B,
-	0x5AF5, 0x4AD4, 0x7AB7, 0x6A96, 0x1A71, 0x0A50, 0x3A33, 0x2A12,
-	0xDBFD, 0xCBDC, 0xFBBF, 0xEB9E, 0x9B79, 0x8B58, 0xBB3B, 0xAB1A,
-	0x6CA6, 0x7C87, 0x4CE4, 0x5CC5, 0x2C22, 0x3C03, 0x0C60, 0x1C41,
-	0xEDAE, 0xFD8F, 0xCDEC, 0xDDCD, 0xAD2A, 0xBD0B, 0x8D68, 0x9D49,
-	0x7E97, 0x6EB6, 0x5ED5, 0x4EF4, 0x3E13, 0x2E32, 0x1E51, 0x0E70,
-	0xFF9F, 0xEFBE, 0xDFDD, 0xCFFC, 0xBF1B, 0xAF3A, 0x9F59, 0x8F78,
-	0x9188, 0x81A9, 0xB1CA, 0xA1EB, 0xD10C, 0xC12D, 0xF14E, 0xE16F,
-	0x1080, 0x00A1, 0x30C2, 0x20E3, 0x5004, 0x4025, 0x7046, 0x6067,
-	0x83B9, 0x9398, 0xA3FB, 0xB3DA, 0xC33D, 0xD31C, 0xE37F, 0xF35E,
-	0x02B1, 0x1290, 0x22F3, 0x32D2, 0x4235, 0x5214, 0x6277, 0x7256,
-	0xB5EA, 0xA5CB, 0x95A8, 0x8589, 0xF56E, 0xE54F, 0xD52C, 0xC50D,
-	0x34E2, 0x24C3, 0x14A0, 0x0481, 0x7466, 0x6447, 0x5424, 0x4405,
-	0xA7DB, 0xB7FA, 0x8799, 0x97B8, 0xE75F, 0xF77E, 0xC71D, 0xD73C,
-	0x26D3, 0x36F2, 0x0691, 0x16B0, 0x6657, 0x7676, 0x4615, 0x5634,
-	0xD94C, 0xC96D, 0xF90E, 0xE92F, 0x99C8, 0x89E9, 0xB98A, 0xA9AB,
-	0x5844, 0x4865, 0x7806, 0x6827, 0x18C0, 0x08E1, 0x3882, 0x28A3,
-	0xCB7D, 0xDB5C, 0xEB3F, 0xFB1E, 0x8BF9, 0x9BD8, 0xABBB, 0xBB9A,
-	0x4A75, 0x5A54, 0x6A37, 0x7A16, 0x0AF1, 0x1AD0, 0x2AB3, 0x3A92,
-	0xFD2E, 0xED0F, 0xDD6C, 0xCD4D, 0xBDAA, 0xAD8B, 0x9DE8, 0x8DC9,
-	0x7C26, 0x6C07, 0x5C64, 0x4C45, 0x3CA2, 0x2C83, 0x1CE0, 0x0CC1,
-	0xEF1F, 0xFF3E, 0xCF5D, 0xDF7C, 0xAF9B, 0xBFBA, 0x8FD9, 0x9FF8,
-	0x6E17, 0x7E36, 0x4E55, 0x5E74, 0x2E93, 0x3EB2, 0x0ED1, 0x1EF0
-};
-void pb_protocol_crc(const uint8* buffer, uint16 buffer_len, uint8 crc[2])
-{
-	uint16 accnum = 0xc78c;
-	uint16 i;
-	for(i = 0; i < buffer_len; ++i)
-	{
-		accnum = (accnum << 8) ^ crc_table[((accnum >> 8)
-		^ buffer[i]) & 0xFF];
-	}
-	crc[0] = (uint8)((accnum >> 8) & 0xFF);
-	crc[1] = (uint8)(accnum & 0xFF);
-}
-
-
-uint8 sp_set_transno_unit(bool flag, char* punit, uint16 lastaddr)
-{
-	uint16 pageno = 0;
-	if(flag == true)
-	{
-		pageno = ADDR_MASTER_TRANS_SEQNO/FLASH_PAGE_SIZE;
-	}
-	else
-	{
-		pageno = ADDR_SLAVE_TRANS_SEQNO/FLASH_PAGE_SIZE;
-	}
-	if(lastaddr+sizeof(sp_transno_unit) > FLASH_PAGE_SIZE)
-	{
-		//擦除该页
-		SF_ErasePage(pageno);
-		//从0开始写
-	}
-	else
-	{
-		//从上一次的后面接着写，不需要擦除
-	}
-
-	return 0;
-	
-}
-
-
-uint8 sp_get_transno_unit(bool flag, sp_transno_unit* ptrans_unit)
-{
-	uint16 pageno = 0;
-	uint8 ret = 0;
-	uint8 read_buf[FLASH_PAGE_SIZE] = {0};
-	uint32 offset = 0;
-	sp_transno_unit tmp_unt;
-	uint8 tmp_crc[2] = {0};
-	if(flag == true)
-	{
-		pageno = ADDR_MASTER_TRANS_SEQNO/FLASH_PAGE_SIZE;
-	}
-	else
-	{
-		pageno = ADDR_SLAVE_TRANS_SEQNO/FLASH_PAGE_SIZE;
-	}
-	ret = SF_Read(pageno, 0, read_buf, FLASH_PAGE_SIZE);
-	if (ret != 1)
-		return 1;
-
-	memset(&tmp_unt, 0 ,sizeof(tmp_unt));
-	
-	for(offset = 0; offset < FLASH_PAGE_SIZE; offset += sizeof(sp_transno_unit))
-	{
-		memcpy(&tmp_unt, read_buf+offset, sizeof(sp_transno_unit));
-		pb_protocol_crc((uint8*)&tmp_unt, 8, tmp_crc);
-		if(memcmp(tmp_crc, tmp_unt.crc, 2) == 0)
-		{
-			memcpy(ptrans_unit, &tmp_unt, sizeof(tmp_unt) );
-			return 0;
-		}
-	}
-	return 2;
-	
-}
-
-
-
-uint8 sp_write_transdtl(uint8* ptransdtl)
-{
-	//读取主从流水号
-	uint8 ret = 0;
-	uint16 next_page;
-	sp_transno_unit master_unit,slave_unit;
-	ret = sp_get_transno_unit(true, &master_unit);
-	if(ret)
-		return ret;
-	ret = sp_get_transno_unit(true, &slave_unit);
-	if(ret)
-		return ret;
-	//对比主从流水号是否一致
-	if(master_unit.trans_no != slave_unit.trans_no)
-		return 1;
-	//写流水数据
+/*
 	//假如要从最后一页跨到第一页了，也将第一页删除
 	if(master_unit.trans_addr + sizeof(sp_st_transdtl) > ADDR_TRANS_LAST)
 	{
@@ -142,16 +21,264 @@ uint8 sp_write_transdtl(uint8* ptransdtl)
 	next_page = 2;
 	SF_ErasePage(next_page);
 	//是否要考虑正要被擦除的页的流水未上传的问题??????
+*/
+	return 0;
+}
+
+
+uint8 sp_do_write_card(uint8* ptransdtl)
+{
+	return 0;
+}
+
+uint8 sp_update_left_transdtl_info(uint8* ptransdtl)
+{
+	return 0;
+}
+
+
+/*******************************************************
+*** 函数名:		sp_write_transno_unit
+*** 函数功能:	写主(从)流水号	
+*** 参数flag: 	 true----> 主流水号;       false-----> 从流水号
+*** 参数punit: 待存入的结构体的指针
+*** 作者:		汪鹏
+*** 时间:		2014-07-03
+*********************************************************/
+uint8 sp_write_transno_unit(bool flag, uint8* punit)
+{
+	uint8 ret = 0;
+	uint16 pageno = 0;
+	uint16 lastaddr = 0,startaddr = 0; 
+	if(flag == true)
+	{
+		startaddr = ADDR_MASTER_TRANS_SEQNO;
+	}
+	else
+	{
+		startaddr = ADDR_SLAVE_TRANS_SEQNO;
+	}
+	pageno = startaddr/FLASH_PAGE_SIZE; 	//得到页号
+	lastaddr = sp_get_transno_lastaddr(pageno);//获取到的是相对地址
+	
+	if(lastaddr+sizeof(sp_transno_unit) > FLASH_PAGE_SIZE)//查看是否会超过最大地址
+	{
+		SF_ErasePage(pageno);		//擦除该页
+		lastaddr = 0;		//从0开始写
+	}
+	//从lastaddr开始往下写
+	ret = SF_Write(pageno, lastaddr, punit, sizeof(sp_transno_unit), 0);//直接写
+	if(SP_FLASH_FAIL == ret)
+	{
+		ret = SF_Write(pageno, lastaddr, punit, sizeof(sp_transno_unit), 1);//擦除后再写	
+	}
+	return ret;
+	
+}
+
+
+/*******************************************************
+*** 函数名:		sp_read_transno_unit
+*** 函数功能:	读取主从流水号	
+*** 参数flag: 	 true 主流水号;false 从流水号
+*** 参数punit: 	最小单元的结构体指针
+*** 作者:		汪鹏
+*** 时间:		2014-07-03
+*********************************************************/
+uint8 sp_read_transno_unit(bool flag, uint8* ptrans_unit)
+{
+	uint16 pageno = 0;
+	uint8 ret = 0;
+	uint8 read_buf[FLASH_PAGE_SIZE] = {0};
+	uint32 offset = 0;
+	sp_transno_unit tmp_unt;
+	uint8 tmp_crc[2] = {0};
+	uint16 unit_len  = 0;
+	unit_len = sizeof(sp_transno_unit);
+	if(flag == true)
+	{
+		pageno = ADDR_MASTER_TRANS_SEQNO/FLASH_PAGE_SIZE;
+	}
+	else
+	{
+		pageno = ADDR_SLAVE_TRANS_SEQNO/FLASH_PAGE_SIZE;
+	}
+	ret = SF_Read(pageno, 0, read_buf, FLASH_PAGE_SIZE);
+	if (ret != SP_FLASH_FAIL)
+		return SP_FLASH_FAIL;
+	for(offset = 0; offset < FLASH_PAGE_SIZE; offset += unit_len)
+	{
+		memcpy(&tmp_unt, read_buf+offset, unit_len);
+		pb_protocol_crc((uint8*)&tmp_unt, unit_len-2, tmp_crc);
+		if(memcmp(tmp_crc, tmp_unt.crc, 2) == 0)
+		{
+			memcpy(ptrans_unit, &tmp_unt, unit_len);
+			return SP_FLASH_SUCCESS;
+		}
+	}
+	return SP_FLASH_NOT_FOUNT;
+	
+}
+
+
+
+/*******************************************************
+*** 函数名:		sp_write_transdtl
+*** 函数功能:		写交易流水到flash
+*** 参数: 	交易流水结构体指针
+*** 作者:		汪鹏
+*** 时间:		2014-07-03
+*********************************************************/
+uint8 sp_write_transdtl(uint8* ptransdtl)
+{
+	//1、读取主从流水号
+	uint8 ret = 0;
+	uint16 pageno, write_cnt = 0, offset_addr = 0;
+	uint32 next_addr = 0;
+	sp_transno_unit master_unit,slave_unit;
+	sp_st_transdtl tmp_trandtl, read_transdtl;
+	uint8 read_buf[FLASH_PAGE_SIZE];
+	ret = sp_read_transno_unit(true, (uint8*)&master_unit);
+	if(ret)
+		return ret;
+	ret = sp_read_transno_unit(false, (uint8*)&slave_unit);
+	if(ret)
+		return ret;
+	//2、对比主从流水号是否一致
+	if(master_unit.trans_no != slave_unit.trans_no)
+	{
+		//将从流水号存储区的内容覆盖到主流水号中
+		pageno = ADDR_SLAVE_TRANS_SEQNO/FLASH_PAGE_SIZE;
+		SF_Read(pageno, 0, read_buf, FLASH_PAGE_SIZE);
+		pageno = ADDR_MASTER_TRANS_SEQNO/FLASH_PAGE_SIZE;
+		ret = SF_Write(pageno, 0, read_buf, FLASH_PAGE_SIZE, 1);//擦出后写
+		//不成功就死循环写
+		write_cnt = MAX_FLASH_WRITE_CNT;
+		while(ret != SP_FLASH_SUCCESS)
+		{
+			ret = SF_Write(pageno, 0, read_buf, FLASH_PAGE_SIZE, 1);//擦出后写
+			if(write_cnt--<1)
+			{
+				return SP_FLASH_FAIL;//返回错误
+			}
+		}
+		
+	}
+	//3、根据从流水号里的地址读取流水数据
+	pageno = slave_unit.trans_addr/FLASH_PAGE_SIZE;
+	offset_addr = slave_unit.trans_addr - pageno*FLASH_PAGE_SIZE;
+	memset(&tmp_trandtl, 0, sizeof(tmp_trandtl));
+	SF_Read(pageno, offset_addr, (uint8*)(&tmp_trandtl), sizeof(tmp_trandtl));
+	//4、对比流水里的流水号和从流水号存储区中的流水号是否一致
+	if(tmp_trandtl.termseqno != slave_unit.trans_no)
+
+	{
+		return SP_FLASH_FAIL;
+	}
+	//5、写新的主流水号
+	memcpy(&tmp_trandtl, ptransdtl, sizeof(sp_st_transdtl));
+	////5.1、获取下一个流水地址以及流水号
+	next_addr = sp_get_next_transdtl_addr(slave_unit.trans_addr);
+	////5.2、将该地址以及流水中的流水号写入主流水号存储区
+	
+	memset((&master_unit), 0, sizeof(master_unit));
+	master_unit.trans_no = tmp_trandtl.termseqno;
+	master_unit.trans_addr = next_addr;
+	//6、写新的主流水号
+	ret = sp_write_transno_unit(true, (uint8*)(&master_unit));
+	write_cnt = MAX_FLASH_WRITE_CNT;
+	while(ret != SP_FLASH_SUCCESS)
+	{
+		ret = sp_write_transno_unit(true, (uint8*)(&master_unit));
+		if(write_cnt--<1)
+		{
+			return SP_FLASH_FAIL;
+		}
+	}
+	//7、写新的主流水号
+	ret = sp_write_transno_unit(false, (uint8*)(&master_unit));
+	write_cnt = MAX_FLASH_WRITE_CNT;
+	while(ret != SP_FLASH_SUCCESS)
+	{
+		ret = sp_write_transno_unit(false, (uint8*)(&master_unit));
+		if(write_cnt--<1)
+		{
+			return SP_FLASH_FAIL;
+		}
+	}
+	write_cnt = MAX_FLASH_WRITE_CNT;
+	while(1)
+	{
+		//8、 写流水前55个字节(除去最后的tac，交易标志，保留，crc)
+		pageno = master_unit.trans_addr/FLASH_PAGE_SIZE;
+		offset_addr = master_unit.trans_addr - FLASH_PAGE_SIZE*pageno;
+		SF_Write(pageno, offset_addr, ptransdtl, 55, 1);//使用擦出后写的方式
+		//9、读取一遍流水内容是否和内存中的一致
+		SF_Read(pageno, offset_addr, (uint8*)(&read_transdtl), sizeof(sp_st_transdtl));
+		if(read_transdtl.termseqno == tmp_trandtl.termseqno)
+		{
+			break;
+		}
+		if(write_cnt--<1)
+		{
+			return SP_FLASH_FAIL;
+		}
+	}
+	//11、写卡
+	sp_do_write_card(ptransdtl);
+	//12更新最后9个字节
+	sp_update_left_transdtl_info(ptransdtl);
 	
 	return 0;
 }
 
-
-uint8 sp_write_sysinfo(char* write_buff, char* start_addr)
+//读取流水
+uint8 sp_read_transdtl(uint8* ptransdtl)
 {
-	//先读取该页的内容和备份页的内容
+	uint8 ret = 0;
+	uint16 pageno = 0, offset_addr = 0;
+	sp_transno_unit master_unit, slave_uint;
+	//1、读取流水号
+	ret = sp_read_transno_unit(true, (uint8*)(&master_unit));
+	if(ret != SP_FLASH_SUCCESS)
+		return ret;
+	ret = sp_read_transno_unit(false, (uint8*)(&slave_uint));
+	if(ret != SP_FLASH_SUCCESS)
+		return ret;
+	if(slave_uint.trans_no != master_unit.trans_no)
+	{
+		return SP_FLASH_ERROR;
+	}
+	//2、根据流水号里的地址读取流水
+	pageno = slave_uint.trans_addr / FLASH_PAGE_SIZE;
+	offset_addr = slave_uint.trans_addr - pageno*FLASH_PAGE_SIZE;
+	SF_Read(pageno, offset_addr, ptransdtl, sizeof(sp_st_transdtl));
 	return 0;
 }
+
+//写系统信息
+uint8 sp_write_sysinfo(uint8* p_ctx)
+{
+	uint16 pageno;
+	pageno = ADDR_SYSINFO/FLASH_PAGE_SIZE;
+	SF_ErasePage(pageno);
+	SF_Write(pageno, 0, p_ctx, sizeof(sp_context), 0);
+	return 0;
+}
+
+//读取系统信息
+uint8 sp_read_sysinfo(uint8* p_ctx)
+{
+	uint16 pageno;
+	pageno = ADDR_SYSINFO/FLASH_PAGE_SIZE;
+	SF_ErasePage(pageno);
+	SF_Read(pageno, 0, p_ctx, sizeof(sp_context));
+	return 0;
+}
+
+
+
+
 
 
 
