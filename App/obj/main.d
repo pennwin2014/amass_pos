@@ -1,9 +1,9 @@
 ..\obj\main.o: ..\src\main.c
 ..\obj\main.o: ..\src\config.h
 ..\obj\main.o: ..\src\LPC2294.h
-..\obj\main.o: D:\Penn\09Keil\ARM\RV31\INC\stdio.h
-..\obj\main.o: D:\Penn\09Keil\ARM\RV31\INC\stdlib.h
-..\obj\main.o: D:\Penn\09Keil\ARM\RV31\INC\string.h
+..\obj\main.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\stdio.h
+..\obj\main.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\stdlib.h
+..\obj\main.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\string.h
 ..\obj\main.o: ..\src\target.h
 ..\obj\main.o: ..\src\comm.h
 ..\obj\main.o: ..\src\Timer.h

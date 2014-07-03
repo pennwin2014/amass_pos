@@ -1,11 +1,11 @@
 ..\obj\flash_store.o: ..\src\flash_store.c
 ..\obj\flash_store.o: ..\src\flash_store.h
 ..\obj\flash_store.o: ..\src\sp_info.h
+..\obj\flash_store.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\string.h
+..\obj\flash_store.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\stdio.h
 ..\obj\flash_store.o: ..\src\config.h
 ..\obj\flash_store.o: ..\src\LPC2294.h
-..\obj\flash_store.o: D:\Penn\09Keil\ARM\RV31\INC\stdio.h
-..\obj\flash_store.o: D:\Penn\09Keil\ARM\RV31\INC\stdlib.h
-..\obj\flash_store.o: D:\Penn\09Keil\ARM\RV31\INC\string.h
+..\obj\flash_store.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\stdlib.h
 ..\obj\flash_store.o: ..\src\target.h
 ..\obj\flash_store.o: ..\src\comm.h
 ..\obj\flash_store.o: ..\src\Timer.h

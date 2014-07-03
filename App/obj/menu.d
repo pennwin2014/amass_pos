@@ -2,9 +2,9 @@
 ..\obj\menu.o: ..\src\menu.h
 ..\obj\menu.o: ..\src\config.h
 ..\obj\menu.o: ..\src\LPC2294.h
-..\obj\menu.o: D:\Penn\09Keil\ARM\RV31\INC\stdio.h
-..\obj\menu.o: D:\Penn\09Keil\ARM\RV31\INC\stdlib.h
-..\obj\menu.o: D:\Penn\09Keil\ARM\RV31\INC\string.h
+..\obj\menu.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\stdio.h
+..\obj\menu.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\stdlib.h
+..\obj\menu.o: D:\Penn\01softs\11Keil\ARM\RV31\INC\string.h
 ..\obj\menu.o: ..\src\target.h
 ..\obj\menu.o: ..\src\comm.h
 ..\obj\menu.o: ..\src\Timer.h

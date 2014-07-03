@@ -1,1 +1,1 @@
--c --cpu ARM7TDMI -g -O0 --apcs=interwork -I "D:\Penn\09Keil\ARM\INC" -I "D:\Penn\09Keil\ARM\INC\Philips" -D__DEBUG_FLASH -o "..\obj\menu.o" --omf_browse "..\obj\menu.crf" --depend "..\obj\menu.d" "..\src\menu.c"
+-c --cpu ARM7TDMI -g -O0 --apcs=interwork -I "D:\Penn\01softs\11Keil\ARM\INC" -I "D:\Penn\01softs\11Keil\ARM\INC\Philips" -D__DEBUG_FLASH -o "..\obj\menu.o" --omf_browse "..\obj\menu.crf" --depend "..\obj\menu.d" "..\src\menu.c"
