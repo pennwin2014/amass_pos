@@ -3,932 +3,647 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Project:</h2>
-D:\Penn\06work\00Ecard\11hardware\pos机开发\amass_pos\App\keil\HD6P_Drive_App.uvproj
-Project File Date:  06/23/2014
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\keil\HD6P_Drive_App.uvproj
+Project File Date:  09/16/2014
 
 <h2>Output:</h2>
 Build target 'Target 1'
 compiling main.c...
-..\src\flash_store.h(24): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_read_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                         ^
-..\src\flash_store.h(47): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(68): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\flash_store.h: ..\src\main.c: 0 warnings, 3 errors
-compiling flash_store.c...
-..\src\flash_store.c(125): warning:  #223-D: function "sp_get_transno_unit" declared implicitly
-..\src\flash_store.c:           ret = sp_get_transno_unit(true, &master_unit);
-..\src\flash_store.c:                 ^
-..\src\flash_store.c(157): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 57 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 1 warning, 1 error
-compiling menu.c...
-..\src\flash_store.h(24): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_read_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                         ^
-..\src\flash_store.h(47): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(68): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\flash_store.h: ..\src\menu.c: 0 warnings, 3 errors
-compiling sp_info.c...
-..\src\flash_store.h(24): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_read_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                         ^
-..\src\flash_store.h(47): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(68): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\sp_info.c(27): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(28): error:  #268: declaration may not appear after executable statement in block
-..\src\sp_info.c:       uint8 crc[2];
-..\src\sp_info.c:       ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): error:  #136: struct "<unnamed>" has no field "sp_info"
-..\src\sp_info.c:               sprintf(p_ctx->sp_info.restarttime, "20130202");
-..\src\sp_info.c:                              ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(47): error:  #165: too few arguments in function call
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                                                                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 6 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-..\src\flash_store.h(6): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_write_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                          ^
-..\src\flash_store.h(19): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_read_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                         ^
-..\src\flash_store.h(42): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(63): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\flash_store.h: ..\src\main.c: 0 warnings, 4 errors
-compiling flash_store.c...
-..\src\M25PE16.h(112): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                            ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                                              ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                                                                        ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                                                                                      ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                             ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                               ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                                                          ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                                                                         ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                                                                                        ^
-..\src\M25PE16.h(114): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8  SF_ErasePage(uint16 page_addr);
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(114): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8  SF_ErasePage(uint16 page_addr);
-..\src\M25PE16.h:                                  ^
-..\src\M25PE16.h(115): error:  #20: identifier "bool" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(115): error:  #20: identifier "uint32" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:                                     ^
-..\src\M25PE16.h(115): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:                                                  ^
-..\src\M25PE16.h(115): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:                                                                ^
-..\src\M25PE16.h(117): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       uint8 IsFlashBusy(void)  ;
-..\src\M25PE16.h:       ^
-..\src\flash_store.c(79): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(83): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(180): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 52 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 19 errors
-compiling menu.c...
-..\src\flash_store.h(6): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_write_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                          ^
-..\src\flash_store.h(19): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_read_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                         ^
-..\src\flash_store.h(42): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(63): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\flash_store.h: ..\src\menu.c: 0 warnings, 4 errors
-compiling sp_info.c...
-..\src\flash_store.h(6): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_write_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                          ^
-..\src\flash_store.h(19): error:  #20: identifier "sp_transno_unit" is undefined
-..\src\flash_store.h:   uint8 sp_read_transno_unit(bool flag, sp_transno_unit* punit);
-..\src\flash_store.h:                                         ^
-..\src\flash_store.h(42): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(63): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\sp_info.c(27): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(28): error:  #268: declaration may not appear after executable statement in block
-..\src\sp_info.c:       uint8 crc[2];
-..\src\sp_info.c:       ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): error:  #136: struct "<unnamed>" has no field "sp_info"
-..\src\sp_info.c:               sprintf(p_ctx->sp_info.restarttime, "20130202");
-..\src\sp_info.c:                              ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(47): error:  #165: too few arguments in function call
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                                                                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 5 warnings, 7 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-..\src\flash_store.h(30): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(51): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\flash_store.h: ..\src\main.c: 0 warnings, 2 errors
-compiling flash_store.c...
-..\src\M25PE16.h(112): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                            ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                                              ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                                                                        ^
-..\src\M25PE16.h(112): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Read(uint16 page_addr, uint16 in_page_byte_addr, uint8 *array, uint16 counter);  
-..\src\M25PE16.h:                                                                                      ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                             ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                               ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                                                          ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                                                                         ^
-..\src\M25PE16.h(113): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8 SF_Write(uint16 page_addr, uint16 in_page_begin_addr, uint8  *array, uint16 counter,uint8 uIsErase);
-..\src\M25PE16.h:                                                                                                        ^
-..\src\M25PE16.h(114): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern uint8  SF_ErasePage(uint16 page_addr);
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(114): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern uint8  SF_ErasePage(uint16 page_addr);
-..\src\M25PE16.h:                                  ^
-..\src\M25PE16.h(115): error:  #20: identifier "bool" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:              ^
-..\src\M25PE16.h(115): error:  #20: identifier "uint32" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:                                     ^
-..\src\M25PE16.h(115): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:                                                  ^
-..\src\M25PE16.h(115): error:  #20: identifier "uint16" is undefined
-..\src\M25PE16.h:       extern bool SF_ReadContinuous(uint32 lAddr,uint8 *array, uint16 counter);// 以线性地址读数据(可跨页)
-..\src\M25PE16.h:                                                                ^
-..\src\M25PE16.h(117): error:  #20: identifier "uint8" is undefined
-..\src\M25PE16.h:       uint8 IsFlashBusy(void)  ;
-..\src\M25PE16.h:       ^
-..\src\flash_store.c(79): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(83): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(155): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "char *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &master_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(158): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "char *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &slave_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(187): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 40 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 21 errors
-compiling menu.c...
-..\src\flash_store.h(30): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(51): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\flash_store.h: ..\src\menu.c: 0 warnings, 2 errors
-compiling sp_info.c...
-..\src\flash_store.h(30): error:  #20: identifier "sp_st_transdtl" is undefined
-..\src\flash_store.h:   uint8 sp_read_transdtl(sp_st_transdtl* ptransdtl);
-..\src\flash_store.h:                          ^
-..\src\flash_store.h(51): error:  #20: identifier "sp_context" is undefined
-..\src\flash_store.h:   uint8 sp_read_sysinfo(sp_context* p_ctx);
-..\src\flash_store.h:                         ^
-..\src\sp_info.c(27): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(28): error:  #268: declaration may not appear after executable statement in block
-..\src\sp_info.c:       uint8 crc[2];
-..\src\sp_info.c:       ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): error:  #136: struct "<unnamed>" has no field "sp_info"
-..\src\sp_info.c:               sprintf(p_ctx->sp_info.restarttime, "20130202");
-..\src\sp_info.c:                              ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(47): error:  #165: too few arguments in function call
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                                                                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 5 warnings, 5 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(93): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = SF_Write(pageno, lastaddr, punit, sizeof(sp_transno_unit), 0);//直接写
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(96): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:                   ret = SF_Write(pageno, lastaddr, punit, sizeof(sp_transno_unit), 1);//擦出后再写        
-..\src\flash_store.c:                                                    ^
-..\src\flash_store.c(154): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "char *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &master_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(157): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "char *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &slave_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(186): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 40 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 4 warnings, 3 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(27): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(28): error:  #268: declaration may not appear after executable statement in block
-..\src\sp_info.c:       uint8 crc[2];
-..\src\sp_info.c:       ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): error:  #136: struct "<unnamed>" has no field "sp_info"
-..\src\sp_info.c:               sprintf(p_ctx->sp_info.restarttime, "20130202");
-..\src\sp_info.c:                              ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(47): error:  #165: too few arguments in function call
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                                                                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 5 warnings, 3 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(154): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &master_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(157): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &slave_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(186): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 40 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 3 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(27): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(28): error:  #268: declaration may not appear after executable statement in block
-..\src\sp_info.c:       uint8 crc[2];
-..\src\sp_info.c:       ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): error:  #136: struct "<unnamed>" has no field "sp_info"
-..\src\sp_info.c:               sprintf(p_ctx->sp_info.restarttime, "20130202");
-..\src\sp_info.c:                              ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(47): error:  #165: too few arguments in function call
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                                                                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 5 warnings, 3 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(154): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &master_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(157): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &slave_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(186): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 40 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 3 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(47): error:  #165: too few arguments in function call
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), 0);
-..\src\sp_info.c:                                                                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 6 warnings, 1 error
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(154): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &master_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(157): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "uint8 *"
-..\src\flash_store.c:           ret = sp_read_transno_unit(true, &slave_unit);
-..\src\flash_store.c:                                            ^
-..\src\flash_store.c(186): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 40 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 3 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 6 warnings, 0 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(186): error:  #147-D: declaration is incompatible with "uint8 sp_write_sysinfo(char *, char *)" (declared at line 40 of "..\src\flash_store.h")
-..\src\flash_store.c:   uint8 sp_write_sysinfo(sp_context* p_ctx)
-..\src\flash_store.c:         ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 1 error
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 6 warnings, 0 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 6 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35804 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=66204 RO-data=820 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
-"..\obj\test.axf" - 0 Error(s), 8 Warning(s).
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 6 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35804 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=66200 RO-data=820 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
-"..\obj\test.axf" - 0 Error(s), 8 Warning(s).
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(78): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(82): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(29): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:       pb_protocol_crc((uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para), crc);
-..\src\sp_info.c:       ^
-..\src\sp_info.c(41): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(44): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(47): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(62): warning:  #223-D: function "pb_protocol_crc" declared implicitly
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:               ^
-..\src\sp_info.c: ..\src\sp_info.c: 6 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35804 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=66200 RO-data=820 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
-"..\obj\test.axf" - 0 Error(s), 8 Warning(s).
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(32): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c(118): error:  #167: argument of type "sp_transno_unit *" is incompatible with parameter of type "const uint8 *"
-..\src\sp_info.c:               pb_protocol_crc(&tmp_unt, unit_len-2, crc);
-..\src\sp_info.c:                               ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 1 error
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(32): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35156 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=66256 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66280 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66324 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66336 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66344 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66344 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66304 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 1 warning, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66716 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(514): warning:  #177-D: variable "menus" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:     menu_info_t menus[] =
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:                 ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 3 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=67108 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(147): warning:  #177-D: function "do_menu_keep" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_keep(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 6 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=67080 RO-data=644 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
 "..\obj\test.axf" - 0 Error(s), 6 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(28): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(32): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(147): warning:  #177-D: function "do_menu_keep" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_keep(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 6 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35156 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=67084 RO-data=644 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
 "..\obj\test.axf" - 0 Error(s), 6 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(179): error:  #167: argument of type "sp_st_transdtl" is incompatible with parameter of type "void *restrict"
-..\src\flash_store.c:           memcpy(tmp_trandtl, ptransdtl, sizeof(sp_st_transdtl));
-..\src\flash_store.c:                  ^
-..\src\flash_store.c(184): error:  #165: too few arguments in function call
-..\src\flash_store.c:           memset(&master_unit), 0, sizeof(master_unit));
-..\src\flash_store.c:                              ^
-..\src\flash_store.c(184): error:  #65: expected a ";"
-..\src\flash_store.c:           memset(&master_unit), 0, sizeof(master_unit));
-..\src\flash_store.c:                                                       ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 3 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(506): warning:  #223-D: function "sp_menu_main" declared implicitly
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:       sp_menu_main(p_ctx);
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:       ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(511): error:  #159: declaration is incompatible with previous "sp_menu_main" (declared at line 506)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void sp_menu_main(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(147): warning:  #177-D: function "do_menu_keep" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_keep(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(511): warning:  #177-D: function "sp_menu_main" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void sp_menu_main(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 8 warnings, 1 error
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 Target not created
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(179): error:  #167: argument of type "sp_st_transdtl" is incompatible with parameter of type "void *restrict"
-..\src\flash_store.c:           memcpy(tmp_trandtl, ptransdtl, sizeof(sp_st_transdtl));
-..\src\flash_store.c:                  ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 1 error
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 0 errors
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(147): warning:  #177-D: function "do_menu_keep" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_keep(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 6 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-..\obj\test.axf: Error: L6200E: Symbol SP_ERR_VAL multiply defined (by flash_store.o and main.o).
-..\obj\test.axf: Error: L6200E: Symbol SP_ERR_VAL multiply defined (by menu.o and main.o).
-..\obj\test.axf: Error: L6200E: Symbol SP_ERR_VAL multiply defined (by sp_info.o and main.o).
-..\obj\test.axf: Not enough information to list image symbols.
-..\obj\test.axf: Not enough information to list the image map.
-..\obj\test.axf: Finished: 2 information, 0 warning and 3 error messages.
-Target not created
-Build target 'Target 1'
-compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.restarttime, "20130202");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(100): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-..\src\sp_info.c:               sprintf(p_ctx->sp_sysinfo.timegap, "123");
-..\src\sp_info.c:                       ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 4 warnings, 0 errors
-linking...
-Program Size: Code=35156 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=67080 RO-data=644 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
 "..\obj\test.axf" - 0 Error(s), 6 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 2 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(498): warning:  #177-D: function "sp_menu_main" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void sp_menu_main(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 6 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35164 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=67080 RO-data=644 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
-"..\obj\test.axf" - 0 Error(s), 4 Warning(s).
+"..\obj\test.axf" - 0 Error(s), 6 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 2 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(147): warning:  #177-D: function "do_menu_keep" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_keep(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(498): warning:  #177-D: function "sp_menu_main" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void sp_menu_main(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 7 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35164 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=67080 RO-data=644 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
-"..\obj\test.axf" - 0 Error(s), 4 Warning(s).
+"..\obj\test.axf" - 0 Error(s), 7 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-compiling flash_store.c...
-..\src\flash_store.c(55): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_MASTER_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c(59): warning:  #69-D: integer conversion resulted in truncation
-..\src\flash_store.c:                   startaddr = ADDR_SLAVE_TRANS_SEQNO;
-..\src\flash_store.c:                               ^
-..\src\flash_store.c: ..\src\flash_store.c: 2 warnings, 0 errors
-compiling menu.c...
-compiling sp_info.c...
-..\src\sp_info.c(84): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:       SF_Read(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), FLASH_PAGE_SIZE);
-..\src\sp_info.c:               ^
-..\src\sp_info.c(103): warning:  #69-D: integer conversion resulted in truncation
-..\src\sp_info.c:               SF_Write(ADDR_SYSINFO, 0, (uint8*)(&p_ctx->sp_sysinfo), sizeof(sys_init_para),0);
-..\src\sp_info.c:                        ^
-..\src\sp_info.c: ..\src\sp_info.c: 2 warnings, 0 errors
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(6): warning:  #177-D: function "do_menu_set" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_set(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(58): warning:  #177-D: function "do_menu_sign" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_sign(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(109): warning:  #177-D: function "do_menu_showinfo" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_menu_showinfo(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(333): warning:  #177-D: function "do_show_menu_ex" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu_ex(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(385): warning:  #177-D: function "do_show_menu" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void do_show_menu(const menu_info_t* menu_info, int menu_count, void* arg)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(498): warning:  #177-D: function "sp_menu_main" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:   static void sp_menu_main(sp_context* p_ctx)
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:               ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 6 warnings, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
 linking...
-Program Size: Code=35156 RO-data=92 RW-data=648 ZI-data=6148  
+Program Size: Code=67076 RO-data=644 RW-data=644 ZI-data=4624  
 FromELF: creating hex file...
-"..\obj\test.axf" - 0 Error(s), 4 Warning(s).
+"..\obj\test.axf" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c(398): warning:  #177-D: variable "ret" was declared but never referenced
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:     int ret = 0;
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c:         ^
+D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c: 1 warning, 0 errors
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66304 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66300 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66124 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66092 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66080 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66080 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66088 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66072 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66072 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66096 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=66032 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=65992 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling sp_flash_store.c...
+compiling sp_menu.c...
+compiling sp_cardoper.c...
+compiling rfmod.c...
+compiling sp_consume.c...
+compiling sp_pubfunc.c...
+compiling sp_flash_impl.c...
+compiling sp_communicate.c...
+compiling sp_disp.c...
+linking...
+Program Size: Code=65992 RO-data=820 RW-data=644 ZI-data=4624  
+FromELF: creating hex file...
+"..\obj\test.axf" - 0 Error(s), 0 Warning(s).

@@ -345,7 +345,7 @@
               <MiscControls></MiscControls>
               <Define>__DEBUG_FLASH</Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\src\hd_include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -386,6 +386,11 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
+              <FileName>sp_consume.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\sp_consume.h</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\main.c</FilePath>
@@ -396,19 +401,64 @@
               <FilePath>..\..\HD6P_Lib.lib</FilePath>
             </File>
             <File>
-              <FileName>flash_store.c</FileName>
+              <FileName>sp_flash_store.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\flash_store.c</FilePath>
+              <FilePath>D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_flash_store.c</FilePath>
             </File>
             <File>
-              <FileName>menu.h</FileName>
+              <FileName>sp_menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>sp_info.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\src\menu.h</FilePath>
+              <FilePath>..\src\sp_info.h</FilePath>
             </File>
             <File>
-              <FileName>menu.c</FileName>
+              <FileName>sp_cardoper.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\menu.c</FilePath>
+              <FilePath>..\src\sp_cardoper.c</FilePath>
+            </File>
+            <File>
+              <FileName>rfmod.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\rfmod.c</FilePath>
+            </File>
+            <File>
+              <FileName>sp_consume.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\sp_consume.c</FilePath>
+            </File>
+            <File>
+              <FileName>sp_pubfunc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\sp_pubfunc.c</FilePath>
+            </File>
+            <File>
+              <FileName>sp_pubfunc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\sp_pubfunc.h</FilePath>
+            </File>
+            <File>
+              <FileName>sp_flash_impl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\sp_flash_impl.c</FilePath>
+            </File>
+            <File>
+              <FileName>sp_flash_impl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\sp_flash_impl.h</FilePath>
+            </File>
+            <File>
+              <FileName>sp_communicate.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_communicate.c</FilePath>
+            </File>
+            <File>
+              <FileName>sp_communicate.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>D:\Penn\06work\00Ecard\11hardware\汇多new\amasspos\App\src\sp_communicate.h</FilePath>
             </File>
           </Files>
         </Group>
